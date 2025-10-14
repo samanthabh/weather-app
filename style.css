@@ -1,6 +1,12 @@
 body {
-  background-color: #163172;
   font-family: "Sour Gummy", sans-serif;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 86, 160, 1) 0%,
+    rgba(22, 49, 114, 1) 100%
+  );
+  background-size: 100% 200%;
+  background-repeat: no-repeat;
 }
 
 .app-styling {

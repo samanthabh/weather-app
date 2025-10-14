@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="app-styling">
@@ -25,21 +26,18 @@
         </form>
       </header>
 
-      <h1 id="city-name">London</h1>
-      <h2 id="date">Tuesday 14/10/2025</h2>
-      <h3 id="time">12:57</h3>
+      <h1 id="city-name"></h1>
+      <h2 id="date"></h2>
+      <h3 id="time"></h3>
       <div id="icon">
-        <img
-          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-          alt="weather-icon"
-        />
+        <img src="" alt="weather-icon" />
       </div>
       <div id="details-container">
-        <h1 id="temp">15ºC</h1>
+        <h1 id="temp"></h1>
         <p id="conditions">
-          Cloudy<br />
-          Humidty: <span class="colour-blue">10%</span><br />
-          Wind: <span class="colour-blue">2mph</span>
+          <span id="weather-conditions"></span><br />
+          Humidty: <span class="colour-blue" id="humidity"></span><br />
+          Wind: <span class="colour-blue" id="wind-speed"></span>
         </p>
       </div>
       <footer>
