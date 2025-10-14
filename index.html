@@ -4,35 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <form class="search-form">
-        <input type="search" placeholder="Enter a city" />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
+    <div class="app-styling">
+      <header>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city"
+            id="city-search-input"
+          />
+          <input type="submit" value="Search" id="city-search-submit" />
+        </form>
+      </header>
 
-    <h1>London</h1>
-    <h2>Tuesday 14/10/2025</h2>
-    <h3>12:57</h3>
-    <img
-      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-      alt="weather-icon"
-    />
-    <h1>15ºC</h1>
-    <p>
-      Cloudy<br />
-      Humidty: 10%<br />
-      Wind: 2mph
-    </p>
-    <footer>
-      This project was coded by
-      <a href="https://github.com/samanthabh">Samantha Burfield-Haar</a>, is
-      <a href="https://github.com/samanthabh/weather-app"
-        >open-sourced on GitHub</a
-      >
-      and <a href="https://weather-app-sbh.netlify.app/">hosted on Netlify</a>
-    </footer>
+      <h1 id="city-name">London</h1>
+      <h2 id="date">Tuesday 14/10/2025</h2>
+      <h3 id="time">12:57</h3>
+      <div id="icon">
+        <img
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+          alt="weather-icon"
+        />
+      </div>
+      <div id="details-container">
+        <h1 id="temp">15ºC</h1>
+        <p id="conditions">
+          Cloudy<br />
+          Humidty: <span class="colour-blue">10%</span><br />
+          Wind: <span class="colour-blue">2mph</span>
+        </p>
+      </div>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/samanthabh">Samantha Burfield-Haar</a>, is
+        <a href="https://github.com/samanthabh/weather-app"
+          >open-sourced on GitHub</a
+        >
+        and <a href="https://weather-app-sbh.netlify.app/">hosted on Netlify</a>
+      </footer>
+    </div>
   </body>
 </html>
