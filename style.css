@@ -97,6 +97,7 @@ img {
   text-align: center;
   font-size: 50px;
   margin-left: 100px;
+  color: #163172;
 }
 
 #conditions {
@@ -107,12 +108,12 @@ img {
 
 .colour-blue {
   color: #163172;
+  font-weight: bold;
 }
 
 .weather-forecast {
   display: flex;
   justify-content: space-around;
-  margin: 20px;
 }
 
 .forecast-date {
@@ -122,8 +123,10 @@ img {
 }
 
 .forecast-icon {
-  text-align: center;
-  font-size: 22px;
+  display: block;
+  margin: 0 auto;
+  width: 85px;
+  height: 85px;
 }
 
 .forecast-temperatures {
@@ -134,7 +137,12 @@ img {
 
 .forecast-temp {
   padding: 10px;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.forecast-temp strong {
+  color: #163172;
 }
 
 footer {

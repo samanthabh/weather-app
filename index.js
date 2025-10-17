@@ -92,10 +92,18 @@ function searchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+// Format day for forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 // Forecast API
 function getForecast(city) {
   let apiKey = "e4d7d87d81aef5843860374o00tff38b";
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query={query}&key=${apiKey}`;
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=${apiKey}`;
 
   axios.get(apiURL).then(displayForecast);
 }
@@ -103,28 +111,33 @@ function getForecast(city) {
 // Weather Forecast
 function displayForecast(response) {
   let forecastElement = document.querySelector("#weather-forecast");
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
 
   let forecastHTML = "";
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="forecast-day">
-          <div class="forecast-date">${day}</div>
-          <div class="forecast-icon">☀️</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="forecast-day">
+          <div class="forecast-date">${formatDay(day.time)}</div>
+          <img src="${
+            day.condition.icon_url
+          }" class="forecast-icon" alt="forecast-icon" />
           <div class="forecast-temperatures">
-            <div class="forecast-temp"><strong>10º</strong></div>
-            <div class="forecast-temp">5º</div>
+            <div class="forecast-temp"><strong>${Math.round(
+              day.temperature.maximum
+            )}º</strong></div>
+            <div class="forecast-temp">${Math.round(
+              day.temperature.minimum
+            )}º</div>
           </div>
         </div>`;
+      forecastElement.innerHTML = forecastHTML;
+    }
   });
-
-  forecastElement.innerHTML = forecastHTML;
 }
 
 let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", searchSubmit);
 
 searchCity("London");
-displayForecast();
