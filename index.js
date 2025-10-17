@@ -24,6 +24,8 @@ function refreshWeather(response) {
   timeElement.innerHTML = formatTime(date);
   dateElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${newIcon}" alt="weather-icon" />`;
+
+  getForecast(response.data.city);
 }
 
 // Format date
@@ -88,6 +90,14 @@ function searchSubmit(event) {
 
   let searchInput = document.querySelector("#city-search-input");
   searchCity(searchInput.value);
+}
+
+// Forecast API
+function getForecast(city) {
+  let apiKey = "e4d7d87d81aef5843860374o00tff38b";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query={query}&key=${apiKey}`;
+
+  axios.get(apiURL).then(displayForecast);
 }
 
 // Weather Forecast
