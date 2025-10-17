@@ -109,6 +109,34 @@ img {
   color: #163172;
 }
 
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.forecast-date {
+  text-align: center;
+  font-size: 22px;
+  padding: 10px;
+}
+
+.forecast-icon {
+  text-align: center;
+  font-size: 22px;
+}
+
+.forecast-temperatures {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.forecast-temp {
+  padding: 10px;
+  font-size: 18px;
+}
+
 footer {
   text-align: center;
   font-size: 15px;
